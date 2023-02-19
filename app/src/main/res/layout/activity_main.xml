@@ -9,11 +9,12 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_recycleView"
+        android:id="@+id/main_recycleView_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <TextView
+        android:id="@+id/main_welcomeText_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
