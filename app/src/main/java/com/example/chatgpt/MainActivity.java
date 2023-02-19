@@ -9,11 +9,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView helloText;
     private EditText massage;
     private ImageButton send;
+    List<Content> content;
 
 
     @Override
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         helloText = findViewById(R.id.main_welcomeText_tv);
         massage = findViewById(R.id.main_chat_et);
         send = findViewById(R.id.main_send_iv);
+
+        content = new ArrayList<>();
 
         send.setOnClickListener(v -> {
             String content = massage.getText().toString().trim();
