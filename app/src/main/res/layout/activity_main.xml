@@ -37,16 +37,20 @@
             android:layout_centerVertical="true"
             android:layout_margin="6dp"
             android:hint="write here"
-            android:layout_toLeftOf="@+id/main_sed_iv" />
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="45dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/send"
-            android:id="@+id/main_sed_iv"
-            android:layout_margin="6dp"
-            />
+            android:layout_toLeftOf="@+id/main_send_iv" />
+
+        <ImageButton
+            android:id="@+id/main_send_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/send" />
 
     </RelativeLayout>
 
