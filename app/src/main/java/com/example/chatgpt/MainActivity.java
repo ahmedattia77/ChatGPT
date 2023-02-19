@@ -1,9 +1,11 @@
 package com.example.chatgpt;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -17,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView helloText;
     private EditText massage;
     private ImageButton send;
-    List<Content> content;
+    List<Message> ListOfMessages;
+    ContentAdapter contentAdapter;
 
 
     @Override
@@ -30,7 +33,13 @@ public class MainActivity extends AppCompatActivity {
         massage = findViewById(R.id.main_chat_et);
         send = findViewById(R.id.main_send_iv);
 
-        content = new ArrayList<>();
+        ListOfMessages = new ArrayList<>();
+        contentAdapter = new ContentAdapter(ListOfMessages);
+        recyclerView.setAdapter(contentAdapter);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         send.setOnClickListener(v -> {
             String content = massage.getText().toString().trim();
