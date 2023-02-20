@@ -29,12 +29,11 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.MyViewHo
         if (message.getSentBy().equals(message.SENT_BY_BOT)){
             holder.leftLayout.setVisibility(View.GONE);
             holder.rightLayout.setVisibility(View.VISIBLE);
-            holder.rightTextContent.setVisibility(View.VISIBLE);
-
+            holder.rightTextContent.setText(message.getContent());
         }else{
             holder.rightLayout.setVisibility(View.GONE);
             holder.leftLayout.setVisibility(View.VISIBLE);
-            holder.leftTextContent.setVisibility(View.VISIBLE);
+            holder.leftTextContent.setText(message.getContent());
         }
     }
 
