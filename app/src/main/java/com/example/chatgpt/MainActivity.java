@@ -17,7 +17,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView helloText;
-    private EditText massage;
+    private EditText message;
     private ImageButton send;
     List<Message> ListOfMessages;
     ContentAdapter contentAdapter;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.main_recycleView_rv);
         helloText = findViewById(R.id.main_welcomeText_tv);
-        massage = findViewById(R.id.main_chat_et);
+        message = findViewById(R.id.main_chat_et);
         send = findViewById(R.id.main_send_iv);
 
         ListOfMessages = new ArrayList<>();
@@ -42,10 +42,18 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         send.setOnClickListener(v -> {
-            String content = massage.getText().toString().trim();
+            String content = message.getText().toString().trim();
             Toast.makeText(this, content, Toast.LENGTH_SHORT).show();
+            senMessage(content , Message.SENT_BY_ME);
+            message.setText("");
+            helloText.setVisibility(View.GONE);
         });
 
 
+    }
+    public void senMessage (String message , String sendBy){
+        ListOfMessages.add(new Message(message , sendBy));
+        contentAdapter.notifyDataSetChanged();
+        recyclerView.smoothScrollToPosition(contentAdapter.getItemCount());
     }
 }
