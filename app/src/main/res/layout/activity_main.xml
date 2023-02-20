@@ -11,7 +11,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_recycleView_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_editTextLayout_lo"
+        />
 
     <TextView
         android:id="@+id/main_welcomeText_tv"
@@ -28,6 +30,7 @@
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:padding="6dp"
+        android:id="@+id/main_editTextLayout_lo"
         >
 
         <EditText

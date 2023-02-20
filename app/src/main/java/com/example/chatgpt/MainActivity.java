@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         send.setOnClickListener(v -> {
             String content = message.getText().toString().trim();
-            Toast.makeText(this, content, Toast.LENGTH_SHORT).show();
             senMessage(content , Message.SENT_BY_ME);
             message.setText("");
             helloText.setVisibility(View.GONE);
